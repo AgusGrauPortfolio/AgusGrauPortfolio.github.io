@@ -1,0 +1,738 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* NAV */
+#menu_on{
+	display: inline-block;
+	width:30px;
+	height: 20px;
+	position: relative;
+	z-index: 2;
+    margin: 15px;
+}
+ 
+#menu_on span{
+	width: 100%;
+	height: 3px;
+	border-radius: 4px;
+	display: block;
+	position: absolute;
+	background: rgb(218, 218, 218);
+	transition: all 0.25s ease; /* Propiedades a animar | Tiempo | Tipo animación*/
+	transform-origin : 0px 100%;
+}
+ 
+#menu_on span:nth-child(2){
+	top: calc(50% - 2px);
+}
+ 
+#menu_on span:nth-child(3){
+bottom: 0;
+}
+
+nav{
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left:-100%; /* Escondemos nuestro menú con un valor negativo */ 
+	width: 100%;
+	z-index: 1;
+	padding: 90px 30px 30px;
+	background: white;
+	opacity: 0;
+	transition: all 0.75s ease;
+	font-size: 1.2em;
+	overflow-y: auto;
+
+
+
+  overflow: hidden;
+  height: 100vh;
+}
+nav a{
+	display:block;
+	text-decoration: none;
+	padding: 10px;
+	color: grey;
+	transition: all ease 0.25s;
+}
+ 
+
+
+
+nav a:hover{
+	color: rgb(218, 218, 218);
+}
+
+.visible_menu span:nth-child(1){
+	transform: rotate(45deg) translate(-2px,1px); 
+}
+ 
+.visible_menu span:nth-child(2){
+	opacity: 0;
+}
+ 
+.visible_menu span:nth-child(3){
+	transform: rotate(-45deg) translate(-3px,3px); 
+}
+
+.visible_menu nav{
+	left: 0;
+	opacity: 1;
+}
+#wrapper{
+    position: absolute;
+}
+
+nav div a:hover svg{
+  fill: #DA7435;
+
+}
+
+@media (min-width: 1024px){
+
+
+nav{
+
+  padding: 10%;
+}
+
+nav img{
+  width: 20%;
+  margin: 0 auto;
+  min-width: 150px;
+  max-width: 300px;
+
+}
+nav a{
+  padding: 0;
+}
+nav div {
+  display: flex;
+  flex-wrap: nowrap;
+
+  align-items: center;
+
+}
+nav div a svg{
+  width: 30%;
+  min-width: 30px;
+  max-width: 100px;
+
+}
+
+
+nav h1, nav h2, nav p{
+  color:#969696;
+  width: 60%;
+  max-width: 600px;
+  margin: 0.2em 0 0.8em 0;
+}
+
+nav h2{
+  margin-top: 2em;
+}
+}
+
+@media (max-width: 1024px){
+  nav h1, nav h2, nav p{
+    width: 90%;
+  }
+
+  nav{
+    padding:15%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+  
+  }
+  nav a{
+    padding: 0;
+  }
+  nav img{
+    width: 30%;
+    min-width: 150px;
+    max-width: 300px;
+  
+  }
+  nav div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  
+  }
+  nav div a svg{
+    width: 20%;
+    min-width: 30px;
+    max-width: 100px;
+  
+  }
+  
+  nav h1, nav h2, nav p{
+    color:#969696;
+    max-width: 600px;
+    margin: 0.2em 0 0.8em 0;
+  }
+  
+}
+
+
+
+
+
+
+h2{
+  font-size: 20px;
+  font-weight: 600;
+  color:white;
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-size: 14px;
+  font-weight: 400;
+  color:white;
+
+  margin: 0;
+  padding: 0;
+}
+
+.pie{
+  font-size: 10px;
+  font-weight: 400;
+  color:white;
+}
+
+/* CELULAR Y TABLET */
+
+@media (max-width: 1024px){
+  section{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;    
+  }
+  section article{
+    width: 100%;   
+    height: 9vh;
+    min-height: 1vh;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    transition: height 1.5s ease-in-out;
+  }
+  section article div:nth-child(1){
+    text-align: end;
+    width: 100%;
+    padding: 8px 20px;
+    position: absolute;
+  }
+
+   /*HOVER GENERAL*/
+
+section article:hover{
+  height:50vh;
+}
+section article:nth-child(1){
+  height: 10vh;
+}
+section article:nth-child(1):hover{
+  height: 10vh;
+}
+
+
+/* TEXTO DESCRIPTIVO*/
+section article div:nth-child(2){
+  padding: 10px;
+  position: absolute;
+  bottom: -240px;
+  transition: bottom 1s;
+  visibility: hidden;
+}
+section article:hover div:nth-child(2){
+  bottom: 0;  
+  visibility: visible;
+}
+
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px){
+
+
+section{
+  display: flex;
+}
+section article{
+  height: 100vh;
+  width: 20%;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;       
+  transition: width 1.5s ease-in-out;
+}
+/* GENERAL */
+section article div:nth-child(1){
+  writing-mode: vertical-rl;
+  transform: scale(-1);
+  text-align: end; 
+  margin: 25px auto;
+  position:initial;
+}
+section article:nth-child(1){
+  width: 80%;
+}
+
+ /*HOVER GENERAL*/
+ section article{
+    min-width: 70px;
+ }
+ section article:hover{
+    width:400%;
+}
+
+section article:hover div:nth-child(1){
+    margin-left: 20px;
+    position: absolute;
+}
+ section article:nth-child(1):hover{
+    width: 80%;
+}
+
+/* TEXTO DESCRIPTIVO*/
+section article div:nth-child(2){
+    padding: 30px 10px;
+    position: absolute;
+    bottom: -240px;
+    left: 20px;
+    transition: bottom 1s;
+    visibility: hidden;
+}
+section article:hover div:nth-child(2){
+    bottom: 0;  
+    max-width: 600px;
+    width: 70%;
+    visibility: visible;
+}
+}
+
+/* ----------------- ARTÍCULOS -------------------- */
+
+
+
+  /* SWEETDELI */
+  section #sweetdeli{
+    background-color: #363C61;
+}
+
+  section #sweetdeli:hover{
+    background-color:rgba(217, 227, 228, 1.00)
+ }
+ section #sweetdeli:hover h2, 
+ section #sweetdeli:hover p{
+     color:#363C61;
+ }
+ section #sweetdeli div:nth-child(1) {
+  position:initial; 
+}
+section #sweetdeli video{
+  visibility:hidden ;
+}
+
+section #sweetdeli:hover video{
+  visibility:visible ;
+  width: 100%;
+  /* height: 100vh; */
+}
+@media (max-width: 1024px){
+
+  section #sweetdeli:hover video{
+    min-height: 40vh;
+   
+  }
+
+  section #sweetdeli:hover {
+    height: 65vh;
+   
+  }
+}
+
+/* EQUILIBRIO */
+
+section #equilibrio{
+    background-color: #5B7CEA;
+}
+
+section #equilibrio:hover figure{
+  min-width: 400px;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+
+}
+section #equilibrio figure img{
+ visibility: hidden;
+}
+
+section #equilibrio:hover figure img{
+  visibility: visible;
+  width: 100%;
+
+}
+
+section #equilibrio:hover div:nth-child(1) h2,
+section #equilibrio:hover div:nth-child(1) p,
+section #equilibrio:hover div:nth-child(2) p{
+    color: #5B7CEA;
+
+
+
+  }
+  section #equilibrio:hover div:nth-child(2){
+
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+  
+    background-image: -webkit-linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #ffffff 70%);
+    background-image: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 70%);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 70%);
+
+  }
+
+  @media (max-width: 1024px){
+
+    section #equilibrio:hover figure{
+    width: 100%;
+    min-width: 100px;
+    height: 50vh;
+    
+  }  
+} 
+@media (min-width: 1024px){
+  section #equilibrio:hover div:nth-child(2){
+    left: 0;
+    max-width: none;
+    padding: 50px 20px 20px 20px;
+  }
+
+}
+
+
+/* MONSTRUO COME LETRAS*/
+section #mcl{
+    background-color: #62d0d4;
+}
+
+section #mcl div:nth-child(3){
+
+  visibility: hidden;
+}
+
+section #mcl:hover div:nth-child(3){
+  visibility:visible ;
+
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+
+}
+
+section #mcl div:nth-child(2) p a{
+    color: white;
+    text-decoration: none;
+}
+section #mcl div:nth-child(2) p a img{
+    width: 1em;
+}
+section #mcl div:nth-child(3) figure:nth-child(1){
+  grid-column: 1/2;
+    grid-row: 1/2;
+    background-image: url(Img/mcld.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0;   
+
+}
+section #mcl div:nth-child(3) figure:nth-child(2){
+  grid-column: 1/2;
+    grid-row: 2/3;
+    background-image: url(Img/mclc.png);
+    background-size: cover;
+    background-position: center;
+    margin: 0; 
+ 
+}
+section #mcl div:nth-child(3) figure:nth-child(3){
+  grid-column: 2/3;
+    grid-row: 1/3;
+    overflow: hidden;
+    margin: 0; 
+} 
+section #mcl div:nth-child(3) figure:nth-child(3) video{
+    height: 100vh;
+  } 
+
+  section #mcl:hover div:nth-child(2){
+
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+  
+    background-image: -webkit-linear-gradient(180deg, rgba(245, 245, 245, 0) 0%, #62d0d4 70%);
+    background-image: -moz-linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #62d0d4 70%);
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #62d0d4 70%);
+
+  }
+  @media (max-width: 1024px){
+    section #mcl:hover {
+      height: 55vh;
+    }
+
+    section #mcl:hover div:nth-child(3){
+      height: 50vh;
+    }
+
+  }
+  @media (min-width: 1024px){
+    section #mcl:hover div:nth-child(2){
+      left: 0;
+      max-width: none;
+      padding: 50px 20px 20px 20px;
+    }
+  
+  }
+
+/* TIMBÓ*/
+
+section #timbo{
+    background-color: #9DAB1E;
+}
+section #timbo video{
+  visibility: hidden;
+}
+section #timbo:hover h2, 
+section #timbo:hover p{
+    color:#9DAB1E;
+}
+section #timbo:hover{
+    background-color: white;
+}
+section #timbo:hover video{
+  visibility:visible ;
+  width: 100%;
+  height: 100vh;
+}
+@media (max-width: 1024px){
+
+  section #timbo:hover video{
+    height: 50vh;
+    padding: 50px;
+  }
+  
+} 
+
+
+ /* MOLINA */
+
+ section #molina{
+    background-color: #E29D39;
+}
+section #molina video{
+    visibility: hidden;
+  }
+  section #molina:hover h2, 
+  section #molina:hover p{
+      color:#E29D39;
+  }
+  section #molina:hover{
+      background-color: white;
+  }
+  section #molina:hover video{
+    visibility:visible ;
+    width: 100%;
+    height: 100vh;
+  }
+  @media (max-width: 1024px){
+
+    section #molina:hover video{
+      height: 50vh;
+      padding: 30px;
+    }
+    
+  } 
+/* JUEGOS OLÍMPICOS */
+
+section #jjoo{
+    background-color: #DA7435;
+
+}
+section #jjoo:hover{
+  background-image: url(Img/juegosolimpicos.jpg);
+  background-position:center center;
+
+}
+section #jjoo div:nth-child(2) p a img{
+  height: 1em;
+}
+
+/* HELADERÍA GARCÍA */
+
+section #garcia{
+    background-color: #BC0808;
+ }
+ section #garcia:hover figure{
+  min-width: 400px;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+
+}
+section #garcia figure img{
+ visibility: hidden;
+}
+
+section #garcia:hover figure img{
+  visibility: visible;
+  width: 100%;
+
+}
+
+section #garcia:hover div:nth-child(2) p{
+    color: #e06363;
+
+  }
+  section #garcia:hover div:nth-child(2){
+
+    width: 100%;
+    margin: 0;
+    padding-top: 50px;
+  }
+
+  @media (max-width: 1024px){
+
+    section #garcia:hover figure{
+    width: 100%;
+    min-width: 100px;
+    height: 50vh;
+    
+  }  
+} 
+@media (min-width: 1024px){
+  section #garcia:hover div:nth-child(2){
+    left: 0;
+    max-width: none;
+    padding: 50px 20px 20px 20px;
+  }
+
+}
+
+/* PANADEROS DE VENUS */
+section #panaderos{
+    background-color: #9A2C55;
+}
+section #panaderos iframe{
+    visibility:hidden ;
+  }
+section #panaderos:hover iframe{
+    visibility:visible ;
+  }
+
+/* CULTO */
+section #culto{
+    background-color: #6A3E87;
+}
+section #culto:hover{
+    background-color: white;
+}
+section #culto div:nth-child(2),
+section #culto figure{
+    visibility: hidden;
+  }
+  section #culto:hover div:nth-child(2){
+    visibility: visible;
+    width: 80%;
+  }
+  section #culto:hover figure{
+    visibility:visible ;
+    height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  section #culto:hover figure video{
+    text-align: center;
+  }
+  section #culto:hover div:nth-child(1) h2,
+  section #culto:hover div:nth-child(1) p,
+  section #culto:hover div:nth-child(2) p{
+      color: #6A3E87;
+    }
+   
+    @media (max-width: 1024px){
+
+      section #culto:hover figure{
+        overflow: hidden;
+        height: 65vh;
+      }
+      section #culto:hover figure video{
+        width:100%
+      }
+      section #culto:hover{
+        height:65vh;
+      }
+
+    }
+
+/* BLANCA */
+
+/* BLANCA */
+
+section #blanca{
+  background-color: black;
+}
+section #blanca video{
+visibility: hidden;
+}
+section #blanca:hover h2, 
+section #blanca:hover p{
+  color:black;
+}
+section #blanca:hover{
+  background-color: white;
+}
+section #blanca:hover video{
+visibility:visible ;
+position: relative;
+width: 100%;
+height: 100vh;
+}
+section #blanca:hover div:nth-child(2) a{
+  color: #969696;
+  text-decoration: none;
+}
+section #blanca:hover div:nth-child(1),
+section #blanca:hover div:nth-child(2) {
+  z-index: 900;
+}
+
+@media (max-width: 1024px){
+  section #blanca:hover {
+    height: 55vh;
+  }
+  
+section #blanca:hover video{
+  height: 50vh;
+}
+
+} 
