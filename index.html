@@ -12,41 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
-
-<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <script src="error404.js"></script>
-    <script>
-        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
-        function init() {
-            canvas = document.getElementById("canvas");
-            anim_container = document.getElementById("animation_container");
-            dom_overlay_container = document.getElementById("dom_overlay_container");
-            var comp = AdobeAn.getComposition("5326B4ECD42B44E58D913AB707D982B1");
-            var lib = comp.getLibrary();
-            handleComplete({}, comp);
-        }
-        function handleComplete(evt, comp) {
-            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var lib = comp.getLibrary();
-            var ss = comp.getSpriteSheet();
-            exportRoot = new lib.erro404();
-            stage = new lib.Stage(canvas);
-            stage.enableMouseOver();
-            //Registers the "tick" event listener.
-            fnStartAnimation = function () {
-                stage.addChild(exportRoot);
-                createjs.Ticker.framerate = lib.properties.fps;
-                createjs.Ticker.addEventListener("tick", stage);
-            }
-            //Code to support hidpi screens and responsive scaling.
-            AdobeAn.makeResponsive(false, 'both', false, 1, [canvas, anim_container, dom_overlay_container]);
-            AdobeAn.compositionLoaded(lib.properties.id);
-            fnStartAnimation();
-        }
-    </script>
-
-
-
     </head>
     <body onload="init();" style="margin:0px;">
          
@@ -97,11 +62,11 @@
         
 
              <article id="sweetdeli">
-                 <div>
+                 <div class="titulo">
                     <h2>SweetDeli</h2>
                     <p>Diseño web</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño, maquetado e ilustraciones para página web.
                     </p>
@@ -116,11 +81,11 @@
              </article>
             
              <article id="equilibrio">
-                <div>
+                <div class="titulo">
                 <h2>Equilibrio</h2>
                     <p>Diseño web</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño, maquetado e ilustraciones	 para página web responsiva.
                     </p>
@@ -134,13 +99,13 @@
             </article>
 
             <article id="mcl">
-                <div>
+                <div class="titulo">
                     <h2>El monstruo come letras</h2>
                         <p>Juego educativo</p>
 
                 </div>
-                <div>
-                    <p>
+                <div class="texto">
+                    <p >
                         Diseño, ilustración y creación artesanal de juego de cartas didtáctico para niños. 
                         <em>Más información en </em>
                         <a href="https://www.instagram.com/elmonstruocomeletras/" target="_blank"> 
@@ -163,11 +128,11 @@
 
 
             <article id="timbo">
-                <div>
+                <div class="titulo">
                 <h2>Timbó</h2>
                     <p>Diseño de identidad</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño y animación de logotipo responsivo.
                     </p>
@@ -183,11 +148,11 @@
 
 
             <article id="molina">
-                <div>
+                <div class="titulo">
                 <h2>Molina</h2>
                     <p>Diseño de identidad</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño de identidad para panadería y animación de logo.
                     </p>
@@ -201,11 +166,11 @@
 
 
             <article id="jjoo">
-                <div>
+                <div class="titulo">
                 <h2>Juegos Olímpicos</h2>
                     <p>Diseño editorial</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño de revista para niños y adolecentes. Proyecto completo en 
                         <a href="https://issuu.com/agusgrau/docs/juegos_oli_mpicos" target="_blank"><img src="Img/Issuu_logo.svg" alt="Issu Logo"></a>
@@ -219,11 +184,11 @@
 
  
              <article id="garcia">
-                <div>
+                <div class="titulo">
                 <h2>Heladería García</h2>
                 <p>Diseño de identidad</p>
             </div>
-            <div>
+            <div class="texto">
                 <p>
                     Diseño de identidad para heladería García.
                 </p>
@@ -237,11 +202,11 @@
 
 
              <article id="panaderos">
-                <div>
+                <div class="titulo">
                 <h2>Los panaderos de Venus</h2>
                     <p>Libro artesanal</p>
                 </div>
-                <div>
+                <div class="texto">
                     <p>
                         Diseño, diagramación, ilustración e impresión utilizando técnicas artesanales (serigrafía, grabado y <em>embossing</em>) del cuento <em>Los panaderos de Venus</em>.
                     </p>
@@ -258,11 +223,11 @@
 
 
             <article id="culto">
-                <div>
+                <div class="titulo">
                 <h2>Culto</h2>
                 <p>Campaña publicitaria</p>
             </div>
-            <div>
+            <div class="texto">
                 <p>
                     Diseño, producción de video y edición de campaña publicitaria para redes sociales (<em>Youtube</em>, <em>TikTok</em> e <em>Instagram</em>) para nuevo producto: <em>Blend de Primavera </em> de Culto.
                 </p>
@@ -276,11 +241,11 @@
 
 
              <article id="blanca">
-                <div>
+                <div class="titulo">
                 <h2>Blanca</h2>
                 <p>Tipografía</p>
             </div>
-            <div>
+            <div class="texto">
                 <p>
                     Diseño de tipografía. Ganadora del concurso de tipografía para el calendario 2022 de Caja Baja. Más información en 
 
@@ -294,6 +259,7 @@
 
     
         </section>
+
 <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js"
 integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
 </script>
@@ -304,8 +270,5 @@ integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="ano
         })
    });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-crossorigin="anonymous"></script>
     </body>
 </html>
