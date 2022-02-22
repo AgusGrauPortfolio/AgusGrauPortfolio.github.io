@@ -14,20 +14,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
+</script>
+<script>
+   $( document ).ready(function() {
+       $('#menu_on').click(function(){ 
+          $('body').toggleClass('visible_menu'); 
+        })
+   });
+</script>
     </head>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous">
-    </script>
-    
-
-    <script>
-       $( document ).ready(function() {
-           $('#menu_on').click(function(){ 
-              $('body').toggleClass('visible_menu'); 
-            })
-       });
-    </script>
-    
+   
     <body onload="init();" style="margin:0px;" class="visible_menu" >
      
          
