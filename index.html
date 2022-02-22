@@ -15,7 +15,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     </head>
    
-    <body onload="init();" style="margin:0px;" class="visible_menu" >
+    <body onload="init();" style="margin:0px;" >
      
          
         <div id="wrapper">
@@ -267,7 +267,7 @@
         </script>
         <script>
            $( document ).ready(function() {
-               $('#menu_on').change(function(){ 
+               $('#menu_on').click(function(){ 
                   $('body').toggleClass('visible_menu'); 
                 })
            });
